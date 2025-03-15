@@ -1,42 +1,224 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Apply background to entire page */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f5dc; /* Soft beige paper-like color */
+  /* background: url("/assets/journal-page.jpg") no-repeat center center; */
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Center the journal */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Journal Styling - Applies the journal image */
+.journal,
+.about {
+  /* background: url("/journal-cover.png") no-repeat center center; */
+  background-size: cover;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  max-width: 600px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Header Styling */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
-.card {
-  padding: 2em;
+/* Tabs Styling */
+button.tabs {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #ff69b4; /* Fun, friendly pink */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-.read-the-docs {
-  color: #888;
+button.tabs:hover {
+  background: #ff85c0; /* Lighter pink on hover */
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  color: black;
+}
+
+/* Style buttons with more padding and rounded corners */
+.resources button {
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  border: 1px solid;
+}
+
+/* Add spacing between Filter by Tags and the + button */
+.dropdown {
+  margin-bottom: 10px;
+}
+
+/* Style the form */
+.form-popup {
+  background: #c1e1c1;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.submit-cancel-group {
+  display: flex;
+  gap: 10px;
+}
+
+textarea,
+input,
+select {
+  border-radius: 8px;
+  padding: 7px;
+  border: 1px solid #ccc;
+}
+
+/* Align category titles to the left */
+.category-section {
+  text-align: left;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.category-section h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.entry {
+  background: #fff;
+  font-weight: normal;
+  padding-left: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* career page styling */
+.career {
+  text-align: center;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.timeline-event {
+  position: relative;
+  margin: 20px 0;
+  padding: 10px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-year {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff69b4;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.timeline-content {
+  margin-left: 60px;
+}
+
+.timeline-content h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Styling for the Template Sections */
+.template-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.template-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.template-section p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.5;
 }
