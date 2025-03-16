@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import "./styles.css";
 
-export default function Advice() {
+export default function Advice({ backgroundImage }) {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [advice, setAdvice] = useState("");
@@ -16,14 +16,13 @@ export default function Advice() {
     setTitle(e.target.value);
   };
 
-  const handleAdviceChange = () => {
-    setContent(e.target.value);
+  const handleAdviceChange = (e) => {
+    setAdvice(e.target.value); // Corrected typo: was 'setContent'
   };
 
-  // const [searchQuery, setSearchQuery] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if ((title.trim() === "") | (advice.trim() === "")) return;
+    if (title.trim() === "" || advice.trim() === "") return;
 
     const newEntry = { title, advice };
     setEntries([...entries, newEntry]);
@@ -41,31 +40,48 @@ export default function Advice() {
   };
 
   return (
-    <div className="advice">
+    <div
+      className="advice"
+      style={{
+        backgroundImage: backgroundImage,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh", // or any specific height you prefer
+        padding: "20px", // adjust padding as needed
+        color: "black", // to ensure text is visible on the background
+      }}
+    >
       <button onClick={() => setShowForm(true)} className="add-button">
-        +
+        + add advice
       </button>
 
       {showForm && (
         <div className="form-popup">
           <form onSubmit={handleSubmit}>
-            <label>Title:</label>
-            <textarea
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Title of your entry"
-            />
-            <label>Advice:</label>
-            <textarea
-              value={advice}
-              onChange={(e) => setAdvice(e.target.value)}
-              placeholder="I wish I knew..."
-            />
+            <div className="form-group">
+              <label>Title:</label>
+              <textarea
+                value={title}
+                onChange={handleTitleChange}
+                placeholder="Title of your entry"
+              />
+            </div>
 
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => setShowForm(false)}>
-              Cancel
-            </button>
+            <div className="form-group">
+              <label>Advice:</label>
+              <textarea
+                value={advice}
+                onChange={handleAdviceChange}
+                placeholder="I wish I knew..."
+              />
+            </div>
+
+            <div className="submit-cancel-group">
+              <button type="submit">Submit</button>
+              <button type="button" onClick={() => setShowForm(false)}>
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
       )}
