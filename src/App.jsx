@@ -213,7 +213,7 @@ async function fetchResources() {
 
     <div className="App">
       <header>
-        <h1>Title of our project</h1>
+        <h1>I Wish I Knew...</h1>
         <button className="tabs" onClick={() => changePage("home")}>
           Home
         </button>
@@ -250,7 +250,7 @@ async function fetchResources() {
         ) : (
           <div className="page">
             <p>{user?.user_metadata.name ?? "My"}'s Journal</p>
-            {isAbout && <About backgroundImage={pageBackgrounds.page} />}
+            {isAbout && <About backgroundImage={pageBackgrounds.page} user={user} />}
             {isAdvice && <Advice backgroundImage={pageBackgrounds.page} user={user} entries={entries} send={addAdvice} />}
             {isCareer && <Career backgroundImage={pageBackgrounds.page} />}
             {isResources && <Resources backgroundImage={pageBackgrounds.page} user={user} resources={resources} send={addResource}/>}

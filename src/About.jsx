@@ -1,4 +1,4 @@
-export default function About({ backgroundImage }) {
+export default function About({ backgroundImage, user }) {
     return (
       <div
         className="about"
@@ -13,7 +13,7 @@ export default function About({ backgroundImage }) {
       >
         <div id="aboutdesc">
         <h2>About</h2>
-        <p>Welcome to [App Name]! 💖 Hi [new user]! Welcome!</p>
+        <p>Welcome to I Wish I Knew! 💖 Hi user! Welcome!</p>
         <p>
           STEM can be awesome, but let’s be real—it can also be super confusing
           when you’re trying to figure it all out on your own. That’s why we

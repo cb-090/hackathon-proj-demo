@@ -1,41 +1,16 @@
 import { useState, useEffect } from "react";
 
-<<<<<<< HEAD
-export default function Advice({ backgroundImage }) {
-=======
-export default function Advice({user, entries, send}) {
->>>>>>> cara
+export default function Advice({user, entries, send, backgroundImage}) {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [advice, setAdvice] = useState("");
   const [selectedEntry, setSelectedEntry] = useState(null);
 
-<<<<<<< HEAD
-  const handleToggleForm = () => {
-    setShowForm(!showForm);
-  };
-
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleAdviceChange = (e) => {
-    setAdvice(e.target.value); // Corrected typo: was 'setContent'
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (title.trim() === "" || advice.trim() === "") return;
-
-    const newEntry = { title, advice };
-    setEntries([...entries, newEntry]);
-=======
   // const [searchQuery, setSearchQuery] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if ((title.trim() === "") | (advice.trim() === "")) return;
     send(title, advice)
->>>>>>> cara
     setTitle("");
     setAdvice("");
     setShowForm(false);
@@ -50,7 +25,6 @@ export default function Advice({user, entries, send}) {
   };
 
   return (
-<<<<<<< HEAD
     <div
       className="advice"
       style={{
@@ -65,12 +39,6 @@ export default function Advice({user, entries, send}) {
       <button onClick={() => setShowForm(true)} className="add-button">
         + add advice
       </button>
-=======
-    <div className="advice">
-      {user && <button onClick={() => setShowForm(true)} className="add-button">
-        +
-      </button>}
->>>>>>> cara
 
       {showForm && (
         <div className="form-popup">
