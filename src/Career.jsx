@@ -6,34 +6,34 @@ export default function Career({ backgroundImage }) {
       year: " ",
       title: "Highschool",
       description:
-        "Complete my Computer Science degree with a focus on software engineering.",
+        "Take CS classes at school (AP or otherwise!), explore summer programs like GWC or KWK, explore summer classes at vatious universities' engineering schools, and start building your own personal projects! Put all of this on a resume, LinkedIn, and GitHub to use when you apply to colleges and scholarships.  Also look into high school internship opportunities with engineering companies!",
     },
     {
       year: " ",
       title: "College: Freshmen-Junior",
       description:
-        "Work as a software engineering intern at a tech company, gaining hands-on experience.",
+        "Take advantage of the CS curriculum at your school, keep updating your resume and GitHub with your class proejcts, as well as your LinkedIn with your various experiences & milestones. Look into freshman, sophomore, or junior specific summer programs and internships offered at various companies, tech focused or otherwise. If interested in graduate education, look into joining a research project with a professor.",
     },
     {
       year: " ",
       title: "College: Senior",
       description:
-        "Begin exploring machine learning and AI by taking online courses and working on personal projects.",
+        "Make the most of your final undergrad courses and apply to graduate programs (if interested in obtainiing a masters or phd). Look at and apply to early career / entry level jobs, post-grad programs (like 1 year of service), keep meeting with your Career and Professional Development Office, and enjoy the rest of your undergrad experience!",
     },
     {
       year: " ",
       title: "Graduate Schools",
       description:
-        "Become an active member of the Society of Women Engineers to build community and network with other women in STEM.",
+        "Explore and complete your branch of research or grad program, and look into post-grad industry opportunities/jobs to jumpstart your career.",
     },
     {
       year: " ",
       title: "Industry",
       description:
-        "Take my first programming class and begin exploring various languages like Python and JavaScript.",
+        "Keep learning and growing in the industry, and plan out where you want to go with your career and the rest of your life :)",
     },
   ];
-
+  
   return (
     <div
       className="career"
