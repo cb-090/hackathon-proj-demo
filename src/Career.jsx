@@ -3,32 +3,32 @@ import React from "react";
 export default function Career({ backgroundImage }) {
   const timelineData = [
     {
-      year: "2025",
-      title: "Graduate from University",
+      year: " ",
+      title: "Highschool",
       description:
         "Complete my Computer Science degree with a focus on software engineering.",
     },
     {
-      year: "2024",
-      title: "Software Internship",
+      year: " ",
+      title: "College: Freshmen-Junior",
       description:
         "Work as a software engineering intern at a tech company, gaining hands-on experience.",
     },
     {
-      year: "2023",
-      title: "Start Learning Machine Learning",
+      year: " ",
+      title: "College: Senior",
       description:
         "Begin exploring machine learning and AI by taking online courses and working on personal projects.",
     },
     {
-      year: "2022",
-      title: "Join Society of Women Engineers",
+      year: " ",
+      title: "Graduate Schools",
       description:
         "Become an active member of the Society of Women Engineers to build community and network with other women in STEM.",
     },
     {
-      year: "2021",
-      title: "Start Learning Programming",
+      year: " ",
+      title: "Industry",
       description:
         "Take my first programming class and begin exploring various languages like Python and JavaScript.",
     },

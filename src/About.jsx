@@ -11,6 +11,7 @@ export default function About({ backgroundImage }) {
           color: "black", // to ensure text is visible on the background
         }}
       >
+        <div id="aboutdesc">
         <h2>About</h2>
         <p>Welcome to [App Name]! 💖 Hi [new user]! Welcome!</p>
         <p>
@@ -44,6 +45,7 @@ export default function About({ backgroundImage }) {
           style.
         </p>
         <p>about the team behind</p>
+        </div>
       </div>
     );
   }

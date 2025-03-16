@@ -56,6 +56,11 @@ main {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
 }
 
+#aboutdesc{
+  margin-right: 75px;
+  margin-left: 75px;
+}
+
 /* Header Styling */
 header {
   padding-top: 20px;
@@ -171,6 +176,7 @@ select {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  justify-items: flex-start;
 }
 
 .entry {
@@ -207,13 +213,13 @@ select {
 
 .timeline-year {
   position: absolute;
-  left: -40px;
+  left: -20px;
   top: 50%;
   transform: translateY(-50%);
   background-color: #ff69b4;
   color: white;
   padding: 8px 16px;
-  border-radius: 50%;
+  border-radius: 25%;
   font-weight: bold;
   font-size: 20px;
 }
@@ -285,11 +291,29 @@ select {
     margin: 15px 0;
     padding: 5px;
     font-size: 18px;
+    background-color: #ffeff2;
+    border-radius: 15px;
+    width: 100px;  /* Set width */
+    height: 100px;
+    color:black;
+    text-align: center;
+  }
+
+  .message::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffeff2;  /* Same yellow */
+    transform: rotate(45deg);  /* Create the folded corner effect */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   }
   
   .message:hover {
-    background-color: #ffeff2; /* Light pink on hover */
-    color: #d16d7f; /* Dark pink text when hovering */
+    background-color: #d16d7f; /* Light pink on hover */
+    color: black; /* Dark pink text when hovering */
   }
   
   /* Style for the advice popup */
