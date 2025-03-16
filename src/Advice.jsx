@@ -1,32 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-export default function Advice() {
+export default function Advice({user, entries, send}) {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [advice, setAdvice] = useState("");
-  const [entries, setEntries] = useState([]);
   const [selectedEntry, setSelectedEntry] = useState(null);
-
-  const handleToggleForm = () => {
-    setShowForm(!showForm);
-  };
-
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleAdviceChange = () => {
-    setContent(e.target.value);
-  };
 
   // const [searchQuery, setSearchQuery] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if ((title.trim() === "") | (advice.trim() === "")) return;
-
-    const newEntry = { title, advice };
-    setEntries([...entries, newEntry]);
+    send(title, advice)
     setTitle("");
     setAdvice("");
     setShowForm(false);
@@ -42,9 +27,9 @@ export default function Advice() {
 
   return (
     <div className="advice">
-      <button onClick={() => setShowForm(true)} className="add-button">
+      {user && <button onClick={() => setShowForm(true)} className="add-button">
         +
-      </button>
+      </button>}
 
       {showForm && (
         <div className="form-popup">
@@ -91,7 +76,7 @@ export default function Advice() {
         <div className="popup-background" onClick={handleClosePopup}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedEntry.title}</h2>
-            <p>{selectedEntry.advice}</p>
+            <p>{selectedEntry.content}</p>
             <button onClick={handleClosePopup}>Close</button>
           </div>
         </div>

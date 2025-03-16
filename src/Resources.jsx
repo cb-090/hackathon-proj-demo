@@ -1,25 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 
-export default function Resources() {
+export default function Resources({user, resources, send}) {
+
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [category, setCategory] = useState("education");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
-  const [entries, setEntries] = useState({
-    education: [],
-    courses: [],
-    finances: [],
-    opportunities: [],
-  });
   const [selectedTags, setSelectedTags] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const allTags = Array.from(
     new Set(
-      Object.values(entries)
+      Object.values(resources)
         .flat()
-        .map((entry) => entry.tags)
+        .map((resource) => resource.tags)
         .flat()
     )
   );
@@ -33,10 +28,7 @@ export default function Resources() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (content.trim() === "") return;
-    setEntries((prev) => ({
-      ...prev,
-      [category]: [...prev[category], { content, tags: tags.split(",") }],
-    }));
+    send(content, category, tags);
     setContent("");
     setTags("");
     setIsFormOpen(false);
@@ -67,9 +59,9 @@ export default function Resources() {
         )}
       </div>
 
-      <button onClick={() => setIsFormOpen(true)} className="add-button">
+      {user && <button onClick={() => setIsFormOpen(true)} className="add-button">
         + add new entry
-      </button>
+      </button>}
 
       {isFormOpen && (
         <div className="form-popup">
@@ -122,21 +114,20 @@ export default function Resources() {
         </div>
       )}
 
-      {Object.keys(entries).map((key) => (
+      {resources && Object.keys(resources).map((key) => (
         <div key={key} className="category-section">
           <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
           <div className="entries">
-            {entries[key]
-              .filter(
-                (entry) =>
+            {!resources[key] ? '' : resources[key].filter(
+                (resource) =>
                   selectedTags.length === 0 ||
-                  entry.tags.some((tag) => selectedTags.includes(tag))
+                  resource.tags.some((tag) => selectedTags.includes(tag))
               )
-              .map((entry, index) => (
+              .map((resource, index) => (
                 <div key={index} className="entry">
-                  <p>{entry.content}</p>
-                  {entry.tags.length > 0 && (
-                    <p className="tags">Tags: {entry.tags.join(", ")}</p>
+                  <p>{resource.content}</p>
+                  {resource.tags.length > 0 && (
+                    <p className="tags">Tags: {resource.tags}</p>
                   )}
                 </div>
               ))}
