@@ -16,9 +16,14 @@ body {
   justify-content: center;
   /* height: 100vh; */
   text-align: center;
+<<<<<<< HEAD
   margin-top: 0px; /* This creates space for the header */
   padding: 0px;
   background: #fffdf6; /* Soft beige paper-like color */
+=======
+  margin-top: 80px; /* This creates space for the header */
+  padding: 20px;
+>>>>>>> cara
 }
 
 main {
@@ -26,7 +31,10 @@ main {
   align-items: center;
   justify-content: center;
   width: 100vh;
+<<<<<<< HEAD
   height: 100%;
+=======
+>>>>>>> cara
 }
 
 /* Journal Styling - Applies the journal image */
@@ -36,8 +44,16 @@ main {
 .career,
 .resources {
   margin-top: 100px; /* This creates space for the header */
+<<<<<<< HEAD
   min-height: 80vh; /* Ensure enough height for the content */
   overflow-y: auto;
+=======
+  /* padding: 20px; */
+  min-height: 80vh; /* Ensure enough height for the content */
+  overflow-y: auto;
+  /* background: url("/journal-cover.png") no-repeat center center; */
+  background-size: cover;
+>>>>>>> cara
   padding: 30px;
   border-radius: 15px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -45,6 +61,10 @@ main {
   /* max-width: 600px; */
   min-height: 400px;
   display: flex;
+<<<<<<< HEAD
+=======
+  display: flex;
+>>>>>>> cara
   align-items: center;
   justify-content: center;
   width: 100vh;
@@ -63,12 +83,18 @@ main {
 
 /* Header Styling */
 header {
+<<<<<<< HEAD
   padding-top: 20px;
   background: lightblue;
   margin: 5px;
+=======
+  padding-top: 0px;
+  background: rgba(0, 0, 0, 0.7);
+>>>>>>> cara
   color: white;
   width: 100%;
   text-align: center;
+<<<<<<< HEAD
   top: 0;
   left: 0;
   right: 0;
@@ -80,6 +106,13 @@ header {
   flex-direction: column;
   justify-content: flex-start; /* Align the buttons to the left */
   align-items: flex-start;
+=======
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* z-index: 10; */
+>>>>>>> cara
 }
 
 /* Tabs Styling */

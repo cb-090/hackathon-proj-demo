@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 
+<<<<<<< HEAD
 export default function Advice({ backgroundImage }) {
+=======
+export default function Advice({user, entries, send}) {
+>>>>>>> cara
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [advice, setAdvice] = useState("");
-  const [entries, setEntries] = useState([]);
   const [selectedEntry, setSelectedEntry] = useState(null);
 
+<<<<<<< HEAD
   const handleToggleForm = () => {
     setShowForm(!showForm);
   };
@@ -25,6 +29,13 @@ export default function Advice({ backgroundImage }) {
 
     const newEntry = { title, advice };
     setEntries([...entries, newEntry]);
+=======
+  // const [searchQuery, setSearchQuery] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if ((title.trim() === "") | (advice.trim() === "")) return;
+    send(title, advice)
+>>>>>>> cara
     setTitle("");
     setAdvice("");
     setShowForm(false);
@@ -39,6 +50,7 @@ export default function Advice({ backgroundImage }) {
   };
 
   return (
+<<<<<<< HEAD
     <div
       className="advice"
       style={{
@@ -53,6 +65,12 @@ export default function Advice({ backgroundImage }) {
       <button onClick={() => setShowForm(true)} className="add-button">
         + add advice
       </button>
+=======
+    <div className="advice">
+      {user && <button onClick={() => setShowForm(true)} className="add-button">
+        +
+      </button>}
+>>>>>>> cara
 
       {showForm && (
         <div className="form-popup">
@@ -106,7 +124,7 @@ export default function Advice({ backgroundImage }) {
         <div className="popup-background" onClick={handleClosePopup}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedEntry.title}</h2>
-            <p>{selectedEntry.advice}</p>
+            <p>{selectedEntry.content}</p>
             <button onClick={handleClosePopup}>Close</button>
           </div>
         </div>
