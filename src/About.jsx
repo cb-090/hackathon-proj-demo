@@ -8,7 +8,7 @@ export default function About({ backgroundImage }) {
           backgroundPosition: "center",
           height: "100vh", // or any specific height you prefer
           padding: "20px", // adjust padding as needed
-          color: "white", // to ensure text is visible on the background
+          color: "black", // to ensure text is visible on the background
         }}
       >
         <h2>About</h2>

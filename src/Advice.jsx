@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 
-export default function Advice() {
+export default function Advice({ backgroundImage }) {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState("");
   const [advice, setAdvice] = useState("");
@@ -41,7 +40,17 @@ export default function Advice() {
   };
 
   return (
-    <div className="advice">
+    <div
+      className="advice"
+      style={{
+        backgroundImage: backgroundImage,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh", // or any specific height you prefer
+        padding: "20px", // adjust padding as needed
+        color: "black", // to ensure text is visible on the background
+      }}
+    >
       <button onClick={() => setShowForm(true)} className="add-button">
         +
       </button>

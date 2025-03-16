@@ -14,8 +14,8 @@ export default function App() {
   const [isCareer, setIsCareer] = useState(false);
   const [isResources, setIsResources] = useState(false);
   const pageBackgrounds = {
-    cover: "url('/journal-cover.png')",
-    page: "url('/journal-page.jpg')",
+    cover: "url('/assets/journal-cover.png')",
+    page: "url('/assets/journal-page.jpg')"
   };
 
   const changePage = (page) => {
@@ -90,21 +90,11 @@ export default function App() {
   // }
 
   return (
+
     <div className="App">
       <header>
         <h1>Title of our project</h1>
-        <button className="tabs" onClick={() => changePage("about")}>
-          About
-        </button>
-        <button className="tabs" onClick={() => changePage("advice")}>
-          Advice
-        </button>
-        <button className="tabs" onClick={() => changePage("career")}>
-          Career
-        </button>
-        <button className="tabs" onClick={() => changePage("resources")}>
-          Resources
-        </button>
+
       </header>
       <main>
         {!isAbout && !isAdvice && !isCareer && !isResources ? (
@@ -112,26 +102,40 @@ export default function App() {
             className="journal"
             style={{
               backgroundImage: pageBackgrounds.cover,
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundPosition: "center",
               height: "100vh", // or any specific height you prefer
               padding: "20px", // adjust padding as needed
-              color: "white", // to ensure text is visible on the background
+              color: "black", // to ensure text is visible on the background
             }}
           >
             <p>Blank Name's Journal</p>
-            {!user ? (<button onClick={signIn}>Sign In</button>) :
-        (<button onClick={signOut}>Sign Out</button>)}
           </div>
         ) : (
           <div className="page">
             <p>Blank Name's Journal</p>
             {isAbout && <About backgroundImage={pageBackgrounds.page} />}
-            {isAdvice && <Advice />}
-            {isCareer && <Career />}
-            {isResources && <Resources />}
+            {isAdvice && <Advice backgroundImage={pageBackgrounds.page} />}
+            {isCareer && <Career backgroundImage={pageBackgrounds.page} />}
+            {isResources && (
+              <Resources backgroundImage={pageBackgrounds.page} />
+            )}
           </div>
         )}
+        <div className="bookmarks">
+          <button className="tabs" onClick={() => changePage("about")}>
+            About
+          </button>
+          <button className="tabs" onClick={() => changePage("advice")}>
+            Advice
+          </button>
+          <button className="tabs" onClick={() => changePage("career")}>
+            Career
+          </button>
+          <button className="tabs" onClick={() => changePage("resources")}>
+            Resources
+          </button>
+        </div>
       </main>
       <footer>
         {/* add an email/form for suggested improvements */}
