@@ -94,6 +94,14 @@ button.tabs:hover {
   background: #ff85c0; /* Lighter pink on hover */
 }
 
+button:hover {
+  background: #f9d1e6;
+}
+
+button {
+  border: 1px solid;
+}
+
 /* Footer */
 footer {
   margin-top: 20px;
