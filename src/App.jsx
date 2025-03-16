@@ -214,21 +214,6 @@ async function fetchResources() {
     <div className="App">
       <header>
         <h1>I Wish I Knew...</h1>
-        <button className="tabs" onClick={() => changePage("home")}>
-          Home
-        </button>
-        <button className="tabs" onClick={() => changePage("about")}>
-          About
-        </button>
-        <button className="tabs" onClick={() => changePage("advice")}>
-          Advice
-        </button>
-        <button className="tabs" onClick={() => changePage("career")}>
-          Career
-        </button>
-        <button className="tabs" onClick={() => changePage("resources")}>
-          Resources
-        </button>
       </header>
       <main>
         {!isAbout && !isAdvice && !isCareer && !isResources ? (
@@ -243,7 +228,7 @@ async function fetchResources() {
               color: "black", // to ensure text is visible on the background
             }}
           >
-            <p>{user?.user_metadata.name ?? "My"}'s' Journal</p>
+            <p>{user?.user_metadata.name ?? "My"}'s Journal</p>
             {!user ? (<button onClick={signIn}>Sign In</button>) :
         (<button onClick={signOut}>Sign Out</button>)}
           </div>
@@ -257,6 +242,9 @@ async function fetchResources() {
           </div>
         )}
         <div className="bookmarks">
+        <button className="tabs" onClick={() => changePage("home")}>
+            Home
+          </button>
           <button className="tabs" onClick={() => changePage("about")}>
             About
           </button>
@@ -273,7 +261,7 @@ async function fetchResources() {
       </main>
       <footer>
         {/* add an email/form for suggested improvements */}
-        <p>&copy; add email</p>
+        <p>Contact us with any suggestions! &copy; Ctrl Shift Elite LLC.</p>
       </footer>
     </div>
   );

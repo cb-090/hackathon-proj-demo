@@ -344,4 +344,11 @@ select {
     border-color: black;
     padding: 5px 10px;
   }
+
+  .explanation::before {
+    content: "• ";  /* Unicode bullet point */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 8px;  /* Adds space between bullet and text */
+}
   

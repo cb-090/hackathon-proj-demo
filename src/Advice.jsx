@@ -47,7 +47,7 @@ export default function Advice({user, entries, send, backgroundImage}) {
               <label>Title:</label>
               <textarea
                 value={title}
-                onChange={handleTitleChange}
+                onChange={(e) => setTitle(e.target.value)}
                 placeholder="Title of your entry"
               />
             </div>
@@ -56,7 +56,7 @@ export default function Advice({user, entries, send, backgroundImage}) {
               <label>Advice:</label>
               <textarea
                 value={advice}
-                onChange={handleAdviceChange}
+                onChange={(e) => setAdvice(e.target.value)}
                 placeholder="I wish I knew..."
               />
             </div>
