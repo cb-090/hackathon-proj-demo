@@ -1,7 +1,6 @@
 import React from "react";
-import "./App.css";
 
-export default function Career() {
+export default function Career({ backgroundImage }) {
   const timelineData = [
     {
       year: "2025",
@@ -36,7 +35,17 @@ export default function Career() {
   ];
 
   return (
-    <div className="career">
+    <div
+      className="career"
+      style={{
+        backgroundImage: backgroundImage,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh", // or any specific height you prefer
+        padding: "20px", // adjust padding as needed
+        color: "black", // to ensure text is visible on the background
+      }}
+    >
       <h2>My Roadmap</h2>
       <div className="timeline">
         {timelineData.map((event, index) => (

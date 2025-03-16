@@ -2,9 +2,9 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #f5f5dc; /* Soft beige paper-like color */
+  background: #fffdf6; /* Soft beige paper-like color */
   /* background: url("/assets/journal-page.jpg") no-repeat center center; */
-  background-size: cover;
+  /* background-size: cover; */
   height: 100vh;
 }
 
@@ -14,22 +14,40 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
+  margin-top: 0px; /* This creates space for the header */
+  padding: 0px;
+  background: #fffdf6; /* Soft beige paper-like color */
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vh;
+  height: 100%;
 }
 
 /* Journal Styling - Applies the journal image */
 .journal,
-.about {
-  /* background: url("/journal-cover.png") no-repeat center center; */
-  background-size: cover;
+.about,
+.advice,
+.career,
+.resources {
+  margin-top: 100px; /* This creates space for the header */
+  min-height: 80vh; /* Ensure enough height for the content */
+  overflow-y: auto;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   width: 60%;
-  max-width: 600px;
+  /* max-width: 600px; */
   min-height: 400px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -40,16 +58,23 @@ body {
 
 /* Header Styling */
 header {
-  background: rgba(0, 0, 0, 0.7);
+  padding-top: 20px;
+  background: lightblue;
+  margin: 5px;
   color: white;
-  padding: 15px;
   width: 100%;
   text-align: center;
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+}
+
+.bookmarks {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align the buttons to the left */
+  align-items: flex-start;
 }
 
 /* Tabs Styling */
@@ -59,8 +84,8 @@ button.tabs {
   background: #fa8ec4;; /* Fun, friendly pink */
   color: white;
   border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  /* border-radius: 10px;
+  cursor: pointer; */
   font-size: 16px;
   transition: 0.3s;
 }
@@ -158,7 +183,7 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 1000px;
 }
 
 .timeline-event {

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 
-export default function Resources() {
+export default function Resources({ backgroundImage }) {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [category, setCategory] = useState("education");
   const [content, setContent] = useState("");
@@ -43,7 +42,17 @@ export default function Resources() {
   };
 
   return (
-    <div className="resources">
+    <div
+      className="resources"
+      style={{
+        backgroundImage: backgroundImage,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh", // or any specific height you prefer
+        padding: "20px", // adjust padding as needed
+        color: "black", // to ensure text is visible on the background
+      }}
+    >
       <div className="dropdown">
         <button
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}

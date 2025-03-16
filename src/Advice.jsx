@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 
 export default function Advice({ backgroundImage }) {
   const [showForm, setShowForm] = useState(false);
